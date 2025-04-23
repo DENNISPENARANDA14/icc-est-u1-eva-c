@@ -1,4 +1,9 @@
+import Controlles.BookController;
+import Models.*;
+import Views.ViewConsole;
+
 public class App {
+    
     public static void main(String[] args) throws Exception {
 
         Book[] books = {
@@ -33,6 +38,14 @@ public class App {
                 new Book("Deep Learning", 2016),
                 new Book("The Elements of Statistical Learning", 2001)
         };
+        ViewConsole view =new ViewConsole();
+        view.Mesage("preuba unidad 1");
+        view.Mesage("arreglo original");
+        view.imprimirLibros(books);
+        view.Mesage("arreglo ordenado");
+        BookController bookController = new BookController();
+        bookController.sortByName(books);
+        view.imprimirLibros(books);
 
     }
 }
